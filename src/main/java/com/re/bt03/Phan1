@@ -1,0 +1,24 @@
+Phần 1 – Phân tích lợi ích
+
+Việc đưa các thông số (config) như hospital.name, hospital.hotline vào file application.properties thay vì hard-code trong Java mang lại nhiều lợi ích:
+
+1. Dễ bảo trì (Maintainability)
+Không cần sửa code Java khi thay đổi tên bệnh viện hoặc hotline
+Chỉ cần sửa trong file .properties
+
+2. Tách biệt cấu hình và logic (Separation of Concerns)
+Code Java chỉ xử lý logic
+Config để riêng → sạch code, dễ đọc hơn
+
+3. Linh hoạt môi trường (Dev / Test / Prod)
+Có thể tạo nhiều file:
+application-dev.properties
+application-prod.properties
+Mỗi môi trường dùng config khác nhau
+
+4. Tránh lỗi khi sửa nhiều chỗ
+Nếu hard-code → phải sửa nhiều file → dễ sót
+Dùng config → sửa 1 nơi là xong
+
+5. Hỗ trợ deploy nhanh
+Khi deploy chỉ cần đổi config, không cần build lại code
